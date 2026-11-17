@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TokoKita — Katalog Produk Mini
 
 Proyek demo yang merangkum teknik-teknik dari Pertemuan 1 sampai 11
@@ -41,3 +42,7 @@ begitu materi berikutnya selesai:
 - Konsep REST & HTTP method lain (POST/PUT/DELETE) — Pertemuan 12-13
 - Form tambah/ubah data yang benar-benar mengirim ke server
 - State keranjang belanja (localStorage atau backend sungguhan)
+=======
+# upload-tokoku
+Uji Coba Upload Proyek
+>>>>>>> c14a9065a73f0c2588ecf0dfbb9a3483e237a82f
