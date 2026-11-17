@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail Produk — TokoKita</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-brand-custom shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🛍️ TokoKita</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="katalog.html">Katalog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+        <li class="breadcrumb-item"><a href="katalog.html">Katalog</a></li>
+        <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-produk">Detail Produk</li>
+      </ol>
+    </nav>
+
+    <!-- ============== STATUS Fetch API: loading / error — Pertemuan 11 ============== -->
+    <div id="loading-state" class="text-center py-5">
+      <div class="spinner-border text-success" role="status"></div>
+      <p class="text-muted mt-3 mb-0">Mengambil detail produk dari server…</p>
+    </div>
+
+    <div id="error-state" class="alert alert-danger d-none" role="alert"></div>
+
+    <!-- ============== DETAIL PRODUK (diisi lewat Fetch API native) ============== -->
+    <div id="produk-detail" class="d-none">
+      <div class="row g-4 align-items-start">
+        <div class="col-12 col-md-5">
+          <div class="detail-img-wrap">
+            <img id="d-image" src="" alt="">
+          </div>
+        </div>
+        <div class="col-12 col-md-7">
+          <span id="d-category" class="badge text-bg-secondary mb-2"></span>
+          <h1 id="d-title" class="h3"></h1>
+          <p class="rating-stars mb-1" id="d-rating"></p>
+          <p class="price-tag fs-3" id="d-price"></p>
+          <p id="d-description" class="text-muted"></p>
+          <a href="katalog.html" class="btn btn-outline-secondary mt-2">← Kembali ke Katalog</a>
+        </div>
+      </div>
+
+      <hr class="my-5">
+
+      <h2 class="h5 mb-3">Produk Lain dalam Kategori Ini</h2>
+      <div id="related-loading" class="text-muted small">Memuat rekomendasi…</div>
+      <div id="related-grid" class="row g-3"></div>
+    </div>
+  </div>
+
+  <footer class="bg-brand-dark text-white-50 py-4 mt-5">
+    <div class="container text-center small">
+      <p class="mb-1 text-white">TokoKita — Proyek Demo Belajar Pemrograman Web</p>
+      <p class="mb-0">Dibangun dengan HTML, CSS (Flexbox &amp; Grid), Bootstrap, jQuery, dan Fetch API · Data produk dari
+        <a href="https://fakestoreapi.com" target="_blank" rel="noopener">fakestoreapi.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>

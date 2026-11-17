@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Katalog Produk — TokoKita</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-brand-custom shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🛍️ TokoKita</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link active" href="katalog.html">Katalog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="py-4" style="background-color: var(--brand-bg-soft);">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Katalog</li>
+        </ol>
+      </nav>
+      <h1 class="h3 mb-0">Katalog Produk</h1>
+      <p class="text-muted mb-0">Semua data di bawah ini diambil langsung dari server saat halaman dimuat — coba cari atau filter, tidak ada reload sama sekali.</p>
+    </div>
+  </header>
+
+  <!-- ============== FILTER / PENCARIAN — jQuery event handling (Pertemuan 10 & 11) ============== -->
+  <section class="container py-4">
+    <div class="row g-2 align-items-center">
+      <div class="col-12 col-md-5">
+        <input type="search" id="search-input" class="form-control" placeholder="Cari nama produk…">
+      </div>
+      <div class="col-6 col-md-4">
+        <select id="category-select" class="form-select">
+          <option value="">Semua Kategori</option>
+        </select>
+      </div>
+      <div class="col-6 col-md-3">
+        <select id="sort-select" class="form-select">
+          <option value="default">Urutkan: Default</option>
+          <option value="price-asc">Harga: Rendah ke Tinggi</option>
+          <option value="price-desc">Harga: Tinggi ke Rendah</option>
+          <option value="rating-desc">Rating Tertinggi</option>
+        </select>
+      </div>
+    </div>
+    <p class="text-muted small mt-2 mb-0" id="hasil-info"></p>
+  </section>
+
+  <!-- ============== STATUS AJAX: loading / error — Pertemuan 11 ============== -->
+  <section class="container pb-5">
+    <div id="loading-state" class="text-center py-5">
+      <div class="spinner-border text-success" role="status"></div>
+      <p class="text-muted mt-3 mb-0">Mengambil data produk dari server…</p>
+    </div>
+
+    <div id="error-state" class="alert alert-danger d-none" role="alert">
+      Gagal mengambil data produk. Periksa koneksi internet kamu, lalu muat ulang halaman.
+    </div>
+
+    <div id="empty-state" class="alert alert-secondary d-none" role="alert">
+      Tidak ada produk yang cocok dengan pencarian/filter kamu.
+    </div>
+
+    <div id="produk-grid" class="row g-4"></div>
+  </section>
+
+  <footer class="bg-brand-dark text-white-50 py-4">
+    <div class="container text-center small">
+      <p class="mb-1 text-white">TokoKita — Proyek Demo Belajar Pemrograman Web</p>
+      <p class="mb-0">Dibangun dengan HTML, CSS (Flexbox &amp; Grid), Bootstrap, jQuery, dan Fetch API · Data produk dari
+        <a href="https://fakestoreapi.com" target="_blank" rel="noopener">fakestoreapi.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/katalog.js"></script>
+</body>
+</html>

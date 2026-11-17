@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TokoKita — Katalog Produk Mini</title>
+
+  <!-- Bootstrap 5.3.8 (CDN) — Pertemuan 10 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS kustom (Flexbox, Grid, Media Query — Pertemuan 9) -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============== NAVBAR (Bootstrap component — Pertemuan 10) ============== -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-brand-custom shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">🛍️ TokoKita</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="katalog.html">Katalog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============== HERO — Pertemuan 9: Flexbox ============== -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="badge-eyebrow">Proyek Demo Belajar Web</span>
+        <h1 class="display-5">Belanja Kebutuhan Harian, <span class="text-accent">Tanpa Ribet</span></h1>
+        <p class="lead">Katalog produk elektronik, fashion, dan aksesoris — diambil langsung dari API publik dan ditampilkan tanpa perlu reload halaman.</p>
+        <div class="hero-actions">
+          <a href="katalog.html" class="btn btn-accent btn-lg">Lihat Katalog</a>
+          <a href="#kategori" class="btn btn-outline-light btn-lg">Kategori Pilihan</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">🛒</div>
+    </div>
+  </header>
+
+  <!-- ============== FITUR — Pertemuan 9: CSS Grid ============== -->
+  <section class="container py-5">
+    <h2 class="section-title text-center mb-5">Kenapa Belanja di TokoKita?</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Cepat &amp; Mulus</h3>
+        <p>Data diambil di belakang layar (AJAX/Fetch) — halaman tidak pernah reload saat kamu menjelajah.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🗂️</div>
+        <h3>Beragam Kategori</h3>
+        <p>Dari elektronik sampai fashion, semua dikelompokkan rapi dan bisa difilter.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⭐</div>
+        <h3>Rating Transparan</h3>
+        <p>Setiap produk menampilkan rating &amp; jumlah ulasan asli dari sumber data.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Nyaman di HP</h3>
+        <p>Tampilan menyesuaikan otomatis di layar kecil berkat desain responsif.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== KATEGORI PILIHAN — diisi via jQuery AJAX (Pertemuan 10 & 11) ============== -->
+  <section id="kategori" class="container pb-5">
+    <h2 class="section-title text-center mb-4">Kategori Pilihan</h2>
+
+    <div id="kategori-loading" class="text-center text-muted">
+      <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+      Memuat kategori dari server…
+    </div>
+    <div id="kategori-error" class="alert alert-warning d-none" role="alert">
+      Gagal memuat kategori. Periksa koneksi internet, lalu muat ulang halaman.
+    </div>
+    <div id="kategori-list" class="d-flex flex-wrap justify-content-center gap-2"></div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="bg-brand-dark text-white-50 py-4">
+    <div class="container text-center small">
+      <p class="mb-1 text-white">TokoKita — Proyek Demo Belajar Pemrograman Web</p>
+      <p class="mb-0">Dibangun dengan HTML, CSS (Flexbox &amp; Grid), Bootstrap, jQuery, dan Fetch API · Data produk dari
+        <a href="https://fakestoreapi.com" target="_blank" rel="noopener">fakestoreapi.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- jQuery 3.7.1 lalu Bootstrap bundle (urutan ini penting — Pertemuan 10) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
